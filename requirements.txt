@@ -1,4 +1,5 @@
 streamlit
-deepface
-opencv-python
 numpy
+deepface
+tf-keras
+opencv-python
