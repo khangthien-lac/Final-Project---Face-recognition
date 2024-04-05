@@ -32,7 +32,7 @@ def time_log():
 	return date_str,time_str
 		
 face = {}
-st.title('Trang web diem danh')
+st.title('Trang web điểm danh')
 tab1, tab2, tab3 = st.tabs([ 'Registration','Verification','Time log'])
 
 with tab1:
