@@ -18,10 +18,10 @@ def face_verification(face,face_need_to_verify):
 		Same_or_not = DeepFace.verify(y,face_need_to_verify,enforce_detection=False)[0].get('verified')
 		date,time = time_log()
 		if Same_or_not == True: 
-			st.success('Ban da diem danh thanh cong')
+			st.success('Bạn đã điểm danh thành công')
 			return Same_or_not,x,date,time
 		else: 
-			st.warning('Xin hay dang ki')
+			st.warning('Xin hãy đăng kí')
 def verified(image):
 	count = face_count(image)
 	return count,face_reg(image)	
@@ -37,18 +37,18 @@ tab1, tab2, tab3 = st.tabs([ 'Registration','Verification','Time log'])
 
 with tab1:
 	username = st.text_input(label='Username',value=None)
-	image = st.camera_input('Hay chup anh')
+	image = st.camera_input('Đăng kí')
 	if username == None or username =='':
-		st.error('Chua nhap username', icon="🚨")
+		st.error('Bạn chưa nhập username', icon="🚨")
 	elif username != None or username !='':
 		onlyOne, face_arr = verified(image)
-		if onlyOne == 0: st.warning('Chi duoc co 1 nguoi')
+		if onlyOne == 0: st.warning('Trong ảnh chỉ được có 1 người')
 		else: 
 			face[username] = face_arr
-			st.success('Ban da dang ki thanh cong')
+			st.success('Bạn đã đăng kí thành công')
 with tab2:
 	if face != []:
-		cur_image = st.camera_input('Chup anh')
+		cur_image = st.camera_input('Đăng nhập')
 		face_verify = face_reg(cur_image)
 		verify,cur_username,date,time = face_verification(face,face_verify)
 with tab3:
