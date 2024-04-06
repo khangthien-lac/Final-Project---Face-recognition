@@ -2,4 +2,5 @@ streamlit
 numpy
 deepface
 tf-keras
+pandas
 opencv-python
