@@ -9,7 +9,7 @@ def face_count(face_pic):
 	if face_pic is not None:
 		bytes_data = face_pic.getvalue()
 		img_arr = cv2.imdecode(np.frombuffer(bytes_data, np.uint8), cv2.IMREAD_COLOR)
-		facecount = len(DeepFace.extract_faces(img_arr))
+		facecount = len(DeepFace.extract_faces(img_arr,enforce_dectection = True))
 		if facecount == 1: return 1
 		return 0
 def face_reg(face_pic):
