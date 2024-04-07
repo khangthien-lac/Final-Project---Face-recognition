@@ -60,8 +60,7 @@ def game_function(count,camera):
         return score
 
 
-folder = r'Final-Project---Face-recognition
-/pic'
+folder = r'Final-Project---Face-recognition/pic'
 os.chdir(folder)
 with st.sidebar:
     selected = option_menu("Main Menu", ['Main Screen',"Home", 'Settings'], 
