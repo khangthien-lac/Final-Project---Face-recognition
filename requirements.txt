@@ -4,3 +4,5 @@ deepface
 tf-keras
 pandas
 opencv-python
+streamlit_option_menu
+pillow
